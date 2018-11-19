@@ -1,0 +1,10 @@
+.box {
+    width: 98px;
+    height: 98px;
+    border: 1px solid;
+}
+
+.gametext{
+    font-size: 75px;
+    text-align: center;
+}

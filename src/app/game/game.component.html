@@ -1,0 +1,17 @@
+<div *ngIf="!gameover">
+  <div *ngIf="player ; else player2">Player 1 turn</div>
+  <ng-template #player2>Player 2 turn</ng-template>
+  <div class="game">
+    <app-playfield 
+    *ngFor="let playfield of playfields; let i = index" 
+    fieldplace={{i}} 
+    player={{player}} 
+    gameover={{gameover}} 
+    (click)="fieldClick()" 
+    (messageEvent)="receiveMessage($event)"></app-playfield>
+  </div>
+</div>
+<div *ngIf="gameover" (click)="resetGame()">
+  <button> Reset </button>
+  <div>{{message}}</div>
+</div>
